@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <title>Pokedex</title>
+    <link rel = "stylesheet"  href="../static/css/style.css">
+    <script src = "{{url_for('static',filename='js/app.js')}}" charset="utf-8"></script> 
+</head>
+
+<body>
+    <h1> Pokedex, what Pokémon is this?</h1> 
+    <form action = "/" method = "POST" enctype="multipart/form-data">
+        <div class="border-outside">
+            <div class = "outside-box">
+                <center>
+                    <span class="dot"></span>
+                    <span class="dot"></span>    
+                </center>
+
+                <div class = 'image-preview' id = "imagePreview">
+                    <img src ="" alt ="Pokemon" class = "image-preview__img">
+                    <span class = "image-preview__default_text">...mhm I don't see any Pokémons!</span>
+                </div>
+
+                <input type="file" id="inpFile" name="inpFile" accept=".png, .jpg, .jpeg" multiple="false">
+                <label for="inpFile">
+                    <span class="button-dot dot">ADD POK&Eacute;MON</span>
+                </label>
+
+            </div>
+        </div>
+        <input type = "submit" name="predict" value = "Evaluate please!"/>
+    </form>
+    {{pokemon}}
+
+</body>
+
+</html>
